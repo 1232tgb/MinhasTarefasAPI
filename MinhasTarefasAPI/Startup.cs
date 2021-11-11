@@ -13,6 +13,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using MinhasTarefasAPI.Database;
 using MinhasTarefasAPI.Models;
+using MinhasTarefasAPI.Repositories;
+using MinhasTarefasAPI.Repositories.Contracts;
 
 namespace MinhasTarefasAPI
 {
@@ -30,6 +32,8 @@ namespace MinhasTarefasAPI
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddDbContext<MinhasTarefasContext>(opt => opt.UseSqlite("Data Source=Database\\MinhasTarefas.db"));
+            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+            services.AddScoped<ITarefaRepository, TarefaRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

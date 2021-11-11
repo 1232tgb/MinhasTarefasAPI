@@ -6,9 +6,9 @@ using MinhasTarefasAPI.Models;
 
 namespace MinhasTarefasAPI.Repositories.Contracts
 {
-    interface ITarefaRepository
+    public interface ITarefaRepository
     {
         List<Tarefa> Sincronizacao(List<Tarefa> tarefas);
         List<Tarefa> Restauracao(ApplicationUser usuario, DateTime dataUltimaSincronizacao)
-    }
+     }
 }
